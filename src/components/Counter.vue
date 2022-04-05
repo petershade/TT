@@ -7,13 +7,8 @@ const { count, inc, dec } = useCounter(props.initial)
 </script>
 
 <template>
-  <div>
-    {{ count }}
-    <button class="inc" @click="inc()">
-      +
-    </button>
-    <button class="dec" @click="dec()">
-      -
-    </button>
-  </div>
+	<div class="card">
+	  <img src="/public/1img.png" alt="1 человек">
+	  <h3>Иванов Сергей<p>Delphine</p></h3>
+	</div>
 </template>

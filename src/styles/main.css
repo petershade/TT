@@ -3,26 +3,186 @@
 html,
 body,
 #app {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 html.dark {
-  background: #121212;
+	background: white;
 }
 
 #nprogress {
-  pointer-events: none;
+	pointer-events: none;
 }
 
 #nprogress .bar {
-  background: rgb(13,148,136);
-  opacity: 0.75;
-  position: fixed;
-  z-index: 1031;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
+	background: rgb(13,148,136);
+	opacity: 0.75;
+	position: fixed;
+	z-index: 1031;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+	padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+	margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/*------------------------*/
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-image: url(public/group.svg), url(public/group.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left -5% top 925px, right -10% top 240px;
+  background-attachment: fixed, fixed;
+  -webkit-background-size: cover, cover;
+  -moz-background-size: cover, cover;
+  -o-background-size: cover, cover;
+  background-size: 310px 330px, 310px 330px;
+}
+
+body .bg1{
+	background-image: url(/public/group.svg) no-repeat;
+	width: 310px;
+	height: 330px;
+	margin-top: 925px; 
+}
+
+h1 {
+	font-size: 48px;
+	padding-top: 35px;
+	padding-bottom: 25px;
+	font-weight: 600;
+	color: #384758;
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: 400;
+	color: #606F81;
+}
+
+h3 {
+	font-size: 24px;
+	font-weight: 500;
+	color: #384758;
+}
+
+h3 p {
+	font-size: 18px;
+	font-weight: 400;
+	color: #606F81;	
+}
+
+h4 {
+	font-size: 20px;
+	font-weight: 400;
+	color: #606F81;		
+}
+
+h5 {
+	font-size: 48px;
+	font-weight: 600;
+	color: #384758;
+	line-height: 100%;
+}
+
+header {
+	height: 222px;
+	width: 1280px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+main {
+	height: 1142px;
+	width: 1280px;
+	margin-right: auto;
+	margin-left: auto;
+	display: grid;
+  grid-auto-flow: row;
+}
+
+div img {
+	right: 100px;
 }

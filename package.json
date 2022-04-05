@@ -18,6 +18,8 @@
     "nprogress": "^0.2.0",
     "pinia": "^2.0.12",
     "prism-theme-vars": "^0.2.2",
+    "sass": "^1.49.11",
+    "scss": "^0.2.4",
     "vue": "^3.2.31",
     "vue-demi": "^0.12.4",
     "vue-i18n": "^9.1.9",
@@ -55,5 +57,11 @@
     "vite-ssg-sitemap": "^0.2.0",
     "vitest": "^0.8.1",
     "vue-tsc": "^0.33.9"
-  }
+  },
+  "name": "TT",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/petershade/TT.git",
+  "author": "Peter <radikovpetr@mail.ru>",
+  "license": "MIT"
 }
