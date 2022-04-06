@@ -47,7 +47,6 @@ h2,
 h3,
 h4,
 p,
-ul[class],
 ol[class],
 li,
 figure,
@@ -55,7 +54,7 @@ figcaption,
 blockquote,
 dl,
 dd {
-	margin: 0;
+	line-height: 100%;
 }
 
 /* Выставляем основные настройки по-умолчанию для body */
@@ -129,16 +128,18 @@ body .bg1{
 
 h1 {
 	font-size: 48px;
-	padding-top: 35px;
-	padding-bottom: 25px;
+	padding-top: 45px;
+	padding-bottom: 26px;
 	font-weight: 600;
 	color: #384758;
+	letter-spacing: 0.75px;
 }
 
 h2 {
 	font-size: 18px;
 	font-weight: 400;
 	color: #606F81;
+	line-height: 2;
 }
 
 h3 {
@@ -150,13 +151,16 @@ h3 {
 h3 p {
 	font-size: 18px;
 	font-weight: 400;
-	color: #606F81;	
+	color: #606F81;
+	
 }
 
 h4 {
 	font-size: 20px;
 	font-weight: 400;
-	color: #606F81;		
+	color: #606F81;
+	line-height: 1.4;
+	letter-spacing: 0.75px;
 }
 
 h5 {
@@ -164,6 +168,7 @@ h5 {
 	font-weight: 600;
 	color: #384758;
 	line-height: 100%;
+	letter-spacing: 0.75px;
 }
 
 header {
@@ -179,7 +184,6 @@ main {
 	width: 1280px;
 	margin-right: auto;
 	margin-left: auto;
-	display: grid;
   grid-auto-flow: row;
 }
 

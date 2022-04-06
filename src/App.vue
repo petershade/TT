@@ -55,14 +55,14 @@ useHead({
 							<p>mauris mattis viverra amet sed elit. Pellentesque dui vitae amet diam convallis nisi nec.</p>
 					</h4>
 				</li>
-							<li class = "post">
+				<li class = "post">
 					<h3>Заголовок поста</h3>
 					<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis nec platea ipsum ornare interdum. 
 							<p>Aliquet metus suscipit ornare aliquet accumsan, massa risus quisque ac. Pellentesque risus</p> 
 							<p>mauris mattis viverra amet sed elit. Pellentesque dui vitae amet diam convallis nisi nec.</p>
 					</h4>
 				</li>	
-							<li class = "post">
+				<li class = "post">
 					<h3>Заголовок поста</h3>
 					<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis nec platea ipsum ornare interdum. 
 							<p>Aliquet metus suscipit ornare aliquet accumsan, massa risus quisque ac. Pellentesque risus</p> 
@@ -79,7 +79,8 @@ useHead({
 	width: 134px;
 	height: 48px;
 	display: flex;
-	justify-self: center;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .button {
@@ -91,6 +92,7 @@ useHead({
 	width: 1280px;
 	height: 398px;
 	display: flex;
+	margin-top: 20px;
 }
 
 .card1 {
@@ -108,7 +110,11 @@ useHead({
 .cards-list img {
 	height: 320px;
 	width: 290px;
-	margin-bottom: 20px;
+}
+
+.cards-list h3 {
+	margin-top: 20px;
+	line-height: 1.5;
 }
 
 .posts {
@@ -118,6 +124,7 @@ useHead({
 .apostrophe {
 	width: 290px;
 	margin-right: 34px;
+	margin-top: 44px;
 	text-align: right;
 	img {
 		display: inline;
@@ -126,14 +133,29 @@ useHead({
 
 .posts-list {
 	width: 956px;
-	height: 501px;
-	margin-left: auto;
-	justify-self: end;
+	height: 545px;
+	margin-top: 44px;
 }
 
 .posts-list h2 {
 	font-size: 24px;
 	font-weight: 500;
+}
+
+.posts-list h5 {
+	margin-bottom: 60px;
+}
+
+.posts-list h3 {
+	margin-bottom: 15px;
+	margin-top: 30px;
+}
+
+.posts-list h4 p {
+	font-size: 20px;
+	font-weight: 400;
+	color: #606F81;
+	line-height: 1.4;
 }
 
 </style>
