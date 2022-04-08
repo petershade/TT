@@ -1,64 +1,98 @@
 <script setup lang="ts">
-import { useUserStore } from '~/stores/user'
+import { useUsersStore } from '~/stores/users'
 
-const user = useUserStore()
-const name = $ref(user.savedName)
+const usersStore = useUsersStore()
 
-const router = useRouter()
-const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
-}
-
-const { t } = useI18n()
+usersStore.getUsers().then(() => {
+  const firstUser = usersStore.users?.[0]
+  if (firstUser) {
+    usersStore.selectUser(firstUser.id)
+    usersStore.getSelectedUserPosts()
+  }
+})
 </script>
 
 <template>
-  <div>
-    <div text-4xl>
-      <div i-carbon-campsite inline-block />
+  <header>
+    <h1>Наши топ-блогеры</h1>
+    <h2>Лучшие специалисты в своем деле, <p>средний опыт работы в профессии - 27 лет</p></h2>
+  </header>
+  <main>
+    <Users
+      v-if="usersStore.users !== null"
+      :users="usersStore.users"
+    />
+    <div class="landing__posts">
+      <div class="landing__posts-apostrophe">
+        <img src="/vector.svg" alt="апостроф">
+      </div>
+      <div class="landing__posts-content">
+        <h1>3 актуальных поста {{ usersStore.selectedUser?.name }}</h1>
+        <Posts
+          v-if="usersStore.selectedUserPosts !== null"
+          :posts="usersStore.selectedUserPosts"
+        />
+      </div>
     </div>
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Vitesse
-      </a>
-    </p>
-    <p>
-      <em text-sm opacity-75>{{ t('intro.desc') }}</em>
-    </p>
-
-    <div py-4 />
-
-    <input
-      id="input"
-      v-model="name"
-      :placeholder="t('intro.whats-your-name')"
-      :aria-label="t('intro.whats-your-name')"
-      type="text"
-      autocomplete="false"
-      p="x4 y2"
-      w="250px"
-      text="center"
-      bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
-    >
-    <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
-
-    <div>
-      <button
-        btn m-3 text-sm
-        :disabled="!name"
-        @click="go"
-      >
-        {{ t('button.go') }}
-      </button>
-    </div>
-  </div>
+  </main>
 </template>
 
-<route lang="yaml">
-meta:
-  layout: home
-</route>
+<style lang="scss">
+$component: landing;
+
+.#{$component} {
+  &__posts {
+    display: flex;
+    &-apostrophe {
+      width: 290px;
+      margin-right: 34px;
+      margin-top: 44px;
+      text-align: right;
+      img {
+        display: inline;
+      }
+    }
+    &-content {
+      width: 956px;
+      height: 545px;
+      margin-top: 44px;
+      h5 {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+.buttons {
+  width: 134px;
+  height: 48px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  .button {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.card1 {
+  margin-right: 34px;
+}
+
+.card2 {
+  margin-right: 46px;
+}
+
+.card3 {
+  margin-right: 40px;
+}
+
+.cards-list img {
+  height: 320px;
+  width: 290px;
+}
+
+.cards-list h3 {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+</style>

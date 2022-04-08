@@ -119,9 +119,9 @@ body {
   background-size: 310px 330px, 310px 330px;
 }
 
-body .bg1{
+body .bg1 {
 	background-image: url(/public/group.svg) no-repeat;
-	width: 310px;
+	width: 310px; 
 	height: 330px;
 	margin-top: 925px; 
 }
@@ -140,35 +140,6 @@ h2 {
 	font-weight: 400;
 	color: #606F81;
 	line-height: 2;
-}
-
-h3 {
-	font-size: 24px;
-	font-weight: 500;
-	color: #384758;
-}
-
-h3 p {
-	font-size: 18px;
-	font-weight: 400;
-	color: #606F81;
-	
-}
-
-h4 {
-	font-size: 20px;
-	font-weight: 400;
-	color: #606F81;
-	line-height: 1.4;
-	letter-spacing: 0.75px;
-}
-
-h5 {
-	font-size: 48px;
-	font-weight: 600;
-	color: #384758;
-	line-height: 100%;
-	letter-spacing: 0.75px;
 }
 
 header {
